@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Weather</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+      crossorigin="anonymous"
+    />
+    <link href="src/styles.css" rel="stylesheet" type="text/css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alata&family=Baloo+2&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </head>
+
+  <body>
+    <form id="search-form">
+      <div class="row">
+        <div class="col">
+          <div class="loc"> 
+            <button id="location-btn" class="btn btn-secondary">
+              <i class="fa-solid fa-location-dot"></i>
+            </button>
+          </div>
+        </div>
+        <div class="col-8">
+          <div class="form-group">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Enter a city name"
+              id="enterCity"
+            />
+          </div>
+        </div>
+        <div class="col">
+          <input type="submit" class="btn btn-secondary" value="search" />
+        </div>
+      </div>
+    </form>
+
+      <div class="card">
+        <form>
+          <div class="row">
+            <div class="col">
+              <h1 class="temp-today">
+                <strong></h1>
+              <h1 class="city"></strong>
+              </h1>
+              <h2 class = "date"> 
+                <h2 class = "whether"> 
+                  Sunny
+                </h2> 
+              </h2> 
+            </div>
+            <div class="col">
+              <i class="fa-solid fa-sun"></i>
+            </div>
+          </div>      
+        </form>
+      </div>
+      
+      <div class="card">
+        <div class="row">
+          <div class="col">
+            <span class="font1">Humidity</span>
+            </br>humidity
+            <i class="fa-solid fa-droplet"></i>
+            </br>
+            <span class="font2" id="humidity"> </span>
+          </div>
+          <div class="col">
+            <span class="font1">Wind</span>
+            </br>
+            <i class="fa-solid fa-wind"></i>
+            </br>
+            <span class="font2" id="wind"> </span>
+          </div>
+          <div class="col">
+            <span class="font1">Pleassure</span>
+            </br>
+            <i class="fa-brands fa-cloudscale"></i>
+            </br>
+            <span class="font2" id="pressure"> </span>
+            </div>
+          <div class="col">
+            <span class="font1">Feels like</span> 
+            </br>
+            <i class="fa-solid fa-shirt"></i>
+            </br>
+            <span class="font2" id="feelsLike"> </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+       <div class="row">
+        <div class="col">
+          <span class="font1">
+            <strong>Today</strong>
+          </span>  
+          </br>  
+          <i class="fa-solid fa-cloud-sun"></i>
+          </br>
+          <span class="font2">23°C</span>
+        </div>
+        <div class="col">
+          <span class="font1">
+            <strong>Sat</strong>
+          </span>
+          </br>
+          <i class="fa-solid fa-cloud"></i>
+          </br>
+          <span class="font2">23°C</span>
+        </div>
+        <div class="col">
+          <span class="font1">
+            <strong>Sun</strong>
+          </span>
+          </br>
+          <i class="fa-solid fa-cloud-sun"></i>
+          </br>
+          <span class="font2">24°C</span>
+        </div>
+        <div class="col">
+          <span class="font1">
+            <strong>Mon</strong>
+          </span>
+          </br>
+          <i class="fa-solid fa-cloud"></i>
+          </br>
+          <span class="font2">22°C</span>
+        </div> 
+        <div class="col">
+          <span class="font1">
+            <strong>Tue</strong>
+          </span> 
+          </br>
+          <i class="fa-solid fa-cloud-rain"></i>
+          </br>
+          <span class="font2">19°C</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+    <script src="src/index.js"></script>
+    <script
+      src="https://kit.fontawesome.com/65937f9283.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
