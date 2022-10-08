@@ -7,7 +7,7 @@ let days = [
   "Wednesday",
   "Thursday",
   "Friday",
-  "Saturday"
+  "Saturday",
 ];
 
 let currentDay = days[currentTime.getDay()];
@@ -33,6 +33,15 @@ function currentWheather(response) {
 
   let cityElement = document.querySelector("h1.city");
   cityElement.innerHTML = response.data.name;
+
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+
+  let descriptionElement = document.querySelector("h2.weather");
+  descriptionElement.innerHTML = response.data.weather[0].description;
 
   let humidity = response.data.main.humidity;
   let currentHumidity = document.querySelector("#humidity");
