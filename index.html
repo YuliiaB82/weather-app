@@ -47,8 +47,12 @@
         <form>
           <div class="row">
             <div class="col">
-              <h1 class="temp-today">
-                <strong></h1>
+              <div class="temp-today">
+                <strong id="temperature"></strong>
+                <span class="units">
+                  <a href="#" id="celsius-link" class="active"> °C</a> |
+                  <a href="#" id="fahrenheit-link">°F</a></span>
+                </div>
               <h1 class="city"></strong>
               </h1>
               <h2 class = "date"> 
@@ -146,7 +150,7 @@
       </div>
     </div>
   </div>
-  <small> <a href="https://github.com/YuliiaB82/weather-app" target="_blank" style="text-decoration:none" > 
+  <small> <a href="https://github.com/YuliiaB82/weather-app" id="source" target="_blank" style="text-decoration:none" > 
     Open-source code </a> by Yuliia Blahovistna </small>
 
 

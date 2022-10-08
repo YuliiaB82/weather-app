@@ -13,7 +13,8 @@ h3 {
 }
 
 h2,
-h3 {
+h3,
+#source {
   color: #46709b;
 }
 
@@ -24,7 +25,16 @@ span {
 
 .temp-today {
   font-size: 42px;
+  margin: 10px;
+  text-shadow: 1px 1px white;
 }
+
+.units {
+  font-size: 18px;
+  position: relative;
+  top: -18px;
+}
+
 .card {
   margin: 10px;
   border-radius: 12px;
@@ -71,4 +81,16 @@ span {
 
 h2.weather {
   text-transform: capitalize;
+}
+#celsius-link,
+#fahrenheit-link {
+  text-decoration: none;
+}
+.units .active {
+  color: black;
+  cursor: default;
+}
+
+.units .active:hover {
+  text-decoration: none;
 }
