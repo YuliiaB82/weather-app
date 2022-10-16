@@ -79,6 +79,10 @@ span {
   text-shadow: 1px 1px white;
 }
 
+.font3 {
+  color: #46709b;
+}
+
 h2.weather {
   text-transform: capitalize;
 }

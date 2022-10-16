@@ -23,6 +23,49 @@ if (currentMinutes < 10) {
 let currentDate = document.querySelector("h2.date");
 currentDate.innerHTML = `${currentDay} ${currentHours}:${currentMinutes}`;
 
+function formatDate(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  return days[day];
+}
+
+function forecast(response) {
+  console.log(response.data.daily);
+  let forecastDaily = response.data.daily;
+  let forecastElement = document.querySelector("#weather-forecast");
+  let forecastHTML = `<div class = "row">`;
+
+  forecastDaily.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `<div class="col">
+        <span class="font1">
+          <strong>${formatDate(forecastDay.dt)}</strong>
+        </span>  
+        </br>  
+        <img class="weatherIcon" src="http://openweathermap.org/img/wn/${
+          forecastDay.weather[0].icon
+        }@2x.png" alt="sun-in-clouds" width="40">
+        </br>
+        <span class="font2">${Math.round(forecastDay.temp.max)}°</span>
+        <span class="font3">${Math.round(forecastDay.temp.min)}°</span>
+        </div>`;
+    }
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
+function getForecast(coordinates) {
+  let apiKey = "e6c2364656962bdcb16bc352fc42569a";
+  //let apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(forecast);
+}
+
 function currentWheather(response) {
   let currentCity = document.querySelector("h1.city");
   currentCity.innerHTML = response.data.name;
@@ -58,6 +101,8 @@ function currentWheather(response) {
   let wind = Math.round(response.data.wind.speed);
   let currentWind = document.querySelector("#wind");
   currentWind.innerHTML = `${wind}km/h`;
+
+  getForecast(response.data.coord);
 }
 
 function searchCity(city) {
