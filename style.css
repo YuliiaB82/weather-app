@@ -8,7 +8,7 @@ body {
 h1,
 h2,
 h3 {
-  margin: 10px;
+  margin-left: 10px;
   text-shadow: 1px 1px white;
 }
 
@@ -28,13 +28,11 @@ span {
   margin: 10px;
   text-shadow: 1px 1px white;
 }
-
 .units {
   font-size: 18px;
   position: relative;
   top: -18px;
 }
-
 .card {
   margin: 10px;
   border-radius: 12px;
@@ -48,7 +46,15 @@ span {
 .row {
   margin: 10px;
 }
-
+.col {
+  text-align: center;
+}
+.temp-today,
+.city,
+.date,
+.weather {
+  text-align: left;
+}
 .fa-sun {
   margin: 40px;
 }
@@ -78,7 +84,6 @@ span {
 .font2 {
   text-shadow: 1px 1px white;
 }
-
 .font3 {
   color: #46709b;
 }
@@ -90,6 +95,7 @@ h2.weather {
 #fahrenheit-link {
   text-decoration: none;
 }
+
 .units .active {
   color: black;
   cursor: default;
@@ -97,4 +103,7 @@ h2.weather {
 
 .units .active:hover {
   text-decoration: none;
+}
+.weatherIcon {
+  margin: 13px 0;
 }
